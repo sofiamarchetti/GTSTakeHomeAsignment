@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=E4V85UBP5PGVL"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=test"></script>
+</head>
+
+<body>
+    <header>
+        <h1>My Art Shopping Cart 🛒</h1>
+    </header>
+    <div class="container">
+        <div class="product">
+            <img src="./src/img/portrait1.jpg"
+                alt="Illustration in shades of pink, yellow and blue, representing a deconstructed face with geometric earrings on the ears.">
+            <div class="product-details">
+                <h2>Portrait 1</h2>
+                <p>Cat ipsum dolor sit amet, cat dog hate mouse eat string barf pillow no baths hate everything. Damn
+                    that dog scratch me now! stop scratching me! Purr like a car engine oh yes, there is my human she
+                    does best pats ever that all i like about her hiss meow . Demand to be let outside at once, and
+                    expect owner to wait for me as i think about it warm up laptop with butt lick butt fart rainbows
+                    until owner yells pee in litter box hiss at cats stare out the window and tuxedo cats always looking
+                    dapper.</p>
+                <p><strong>Price:</strong> $20.00</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./src/img/portrait2.jpg"
+                alt="Illustration in shades of pink, yellow and blue, representing a deconstructed face with blue glasses and geometric earrings on the ears.">
+            <div class="product-details">
+                <h2>Portrait 2</h2>
+                <p>Cat ipsum dolor sit amet, cat dog hate mouse eat string barf pillow no baths hate everything. Damn
+                    that dog scratch me now! stop scratching me! Purr like a car engine oh yes, there is my human she
+                    does best pats ever that all i like about her hiss meow . Demand to be let outside at once, and
+                    expect owner to wait for me as i think about it warm up laptop with butt lick butt fart rainbows
+                    until owner yells pee in litter box hiss at cats stare out the window and tuxedo cats always looking
+                    dapper.</p>
+                <p><strong>Price:</strong> $15.00</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="total">
+            <p>Total: $0.00</p>
+        </div>
+    </div>
+
+    <div class="buyerForm"></div>
+        <h1>Buyer Information Form</h1>
+        <form>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <h2>Shipping Address</h2>
+            <label for="address1">Address Line 1:</label>
+            <input type="text" id="address1" name="address1" value="3900 Yupon St" required><br><br>
+
+            <label for="address2">Address Line 2:</label>
+            <input type="text" id="address2" name="address2" value="Houston"><br><br>
+
+            <label for="state">State or Province:</label>
+            <input type="text" id="state" name="state" value="TX" required><br><br>
+
+            <label for="zip">ZIP or Postal Code:</label>
+            <input type="text" id="zip" name="zip" value="77006" required><br><br>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" value="United States" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        paypal.Buttons().render("body");
+    </script>
+</body>
+
+</html>
