@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Shopping Cart</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/src/img/favicon.png" type="image/x-icon" />
     <script src="https://www.paypal.com/sdk/js?client-id=E4V85UBP5PGVL"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=test"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=E4V85UBP5PGVL&components=buttons"></script>
@@ -15,6 +16,7 @@
     <header>
         <h1>My Art Shopping Cart 🛒</h1>
     </header>
+    
     <div class="container">
         <div class="product">
             <img src="./src/img/portrait1.jpg"
@@ -28,7 +30,7 @@
                     until owner yells pee in litter box hiss at cats stare out the window and tuxedo cats always looking
                     dapper.</p>
                 <p><strong>Price:</strong> $20.00</p>
-                <button onclick="addToCart('Product 1', 20)">Add to Cart</button>
+                <button onclick="addToCart('Product 1', 20)" class="button">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -43,7 +45,7 @@
                     until owner yells pee in litter box hiss at cats stare out the window and tuxedo cats always looking
                     dapper.</p>
                 <p><strong>Price:</strong> $15.00</p>
-                <button onclick="addToCart('Product 2', 15)">Add to Cart</button>
+                <button onclick="addToCart('Product 2', 15)" class="button">Add to Cart</button>
             </div>
         </div>
         <div class="total">
@@ -51,7 +53,7 @@
         </div>
     </div>
 
-    <div class="buyerForm"></div>
+    <div class="buyerForm">
         <h1>Buyer Information Form</h1>
         <form>
             <label for="firstName">First Name:</label>
@@ -82,15 +84,14 @@
             <label for="country">Country:</label>
             <input type="text" id="country" name="country" value="United States" required><br><br>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="button">
         </form>
+
+        <script>
+            paypal.Buttons().render("body");
+        </script>
     </div>
-
-    <br>
-
-    <script>
-        paypal.Buttons().render("body");
-    </script>
+    
     <script type="text/javascript" src="/script.js"></script>
 
 </body>
