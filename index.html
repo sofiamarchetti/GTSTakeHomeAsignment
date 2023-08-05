@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://www.paypal.com/sdk/js?client-id=E4V85UBP5PGVL"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=test"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=E4V85UBP5PGVL&components=buttons"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
                     until owner yells pee in litter box hiss at cats stare out the window and tuxedo cats always looking
                     dapper.</p>
                 <p><strong>Price:</strong> $20.00</p>
-                <button>Add to Cart</button>
+                <button onclick="addToCart('Product 1', 20)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -42,11 +43,11 @@
                     until owner yells pee in litter box hiss at cats stare out the window and tuxedo cats always looking
                     dapper.</p>
                 <p><strong>Price:</strong> $15.00</p>
-                <button>Add to Cart</button>
+                <button onclick="addToCart('Product 2', 15)">Add to Cart</button>
             </div>
         </div>
         <div class="total">
-            <p>Total: $0.00</p>
+            <p>Total: $<span id="cart-total">0.00</span></p>
         </div>
     </div>
 
@@ -85,9 +86,12 @@
         </form>
     </div>
 
+    <br>
+
     <script>
         paypal.Buttons().render("body");
     </script>
-</body>
+    <script type="text/javascript" src="/script.js"></script>
 
+</body>
 </html>
