@@ -16,7 +16,7 @@
     <header>
         <h1>My Art Shopping Cart 🛒</h1>
     </header>
-    
+
     <div class="container">
         <div class="product">
             <img src="./src/img/portrait1.jpg"
@@ -87,12 +87,32 @@
             <input type="submit" value="Submit" class="button">
         </form>
 
-        <script>
+        <script id="initiatePayment">
             paypal.Buttons().render("body");
+
+            const button = document.getElementById('initiatePayment');
+
+            button.addEventListener('click', async () => {
+                try {
+                    const response = await fetch('/create-payment');
+                    const data = await response.json();
+                    console.log('Payment setup initiated:', data);
+                    window.location.href = data.links[1].href;
+                } catch (error) {
+                    console.error('Error initiating payment:', error);
+                }
+            });            
         </script>
     </div>
-    
+
+    <div id="thankYouMessage" style="display: none;">
+        <h2>Thank You for Your Purchase!</h2>
+        <p>Your Transaction ID: <span id="transactionId"></span></p>
+    </div>
+
     <script type="text/javascript" src="/script.js"></script>
+    <script type="text/javascript" src="/server.js"></script>
 
 </body>
+
 </html>
