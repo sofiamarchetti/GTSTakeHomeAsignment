@@ -29,7 +29,6 @@ const getAccessToken = async () => {
                     },
                 }
             );
-
             access_token = response.data.access_token;
             return access_token;
         } catch (error) {
@@ -77,7 +76,6 @@ app.get('/make-payment', async (req, res) => {
                 },
             }
         );
-
         res.json(response.data);
     } catch (error) {
         console.error('Error creating payment:', error);
@@ -89,14 +87,11 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
-
-// Example endpoint to capture/execute the PayPal payment
 app.post('/capture-payment', async (req, res) => {
-    const orderId = req.body.orderId; // PayPal Order ID obtained after payment approval
+    const orderId = req.body.orderId; // ID obtained after payment approval
 
     try {
         const token = await getAccessToken();
-
         const response = await axios.post(
             `https://api-m.sandbox.paypal.com/v2/checkout/orders/${orderId}/capture`,
             {},
